@@ -4,6 +4,7 @@ from circleshape import CircleShape
 from player import Player
 from asteroid import Asteroid
 import random 
+import sys
 
 class AsteroidField(pygame.sprite.Sprite):
     edges = [
@@ -77,6 +78,9 @@ def main():
         for item in drawable:
             item.draw(screen)
         updateable.update(dt)
+        for obj in asteroids:
+            if obj.collision_check(p_1):
+                sys.exit("Game Over!")
         pygame.display.flip()
         dt = (myclock.tick(60) / 1000)
         
