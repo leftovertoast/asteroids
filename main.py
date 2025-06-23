@@ -62,6 +62,7 @@ def main():
     updateable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroid_field = pygame.sprite.Group()
+    shots = pygame.sprite.Group()
     myclock = pygame.time.Clock()
     dt = 0
     Player.containers = (updateable, drawable)
